@@ -1,0 +1,48 @@
+This provides a simple web interface for screen captures, for the 
+Siglent SSA3021X spectrum analyzer (SA).
+
+It has been tested on Siglent version 1.2.9.3a software.
+Other s/w versions might also work, but have not been tested.
+
+Installation requires a telnet connection to the SA. Read the forum
+on how to do that if not familiar.
+
+To install:
+
+a) Copy the following 9 files to a USB stick (eg the same USB stick you
+   do your telnet access with):
+       create_screen_image.sh
+       favicon.ico
+       fb2bmp
+       fb2png
+       fblight
+       index.html
+       install.sh
+       nweb23f
+       S99webservice.sh
+
+b) With the USB stick mounted in the SA, and you're connected via telnet, do:
+
+   # cd /usr/bin/siglent/usr/mass_storage/U-disk0
+   # chmod 777 install.sh
+   # ./install.sh
+
+If you want to see what the install script does (it's very simple), do:
+   
+   # cat install.sh
+
+
+After the install script runs (only takes a second), you can logout and power-cycle the SA.
+After reboot you should now be able to access the web interface, via:
+   http://<SA IP address>
+
+Note the SA application consumes almost 100% of the CPU time, which makes the web interface
+very slow. The web interface is significantly faster if you stop the SA first (stop sweeping).
+But nobody will ever call it quick.
+
+The web interface provides two screen images. The "dark" image, which is exactly what the
+screen is showing. And a "light" image version, which can often be better for
+documentation and printing. Images are PNG.
+
+Feel free to edit the (very basic) index.html file to make it prettier. If you create
+something nice, please share!
