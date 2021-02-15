@@ -32,7 +32,8 @@ install.sh is a fairly trivial script which copies the various files into their 
 # Building the C files
 These files need to be compiled for the TI AM335x processor. Hence a suitable build environment must be created. The latest AM335X SDK can be downloaded from https://software-dl.ti.com/processor-sdk-linux/esd/AM335X/latest/index_FDS.html The TI website has instructions on installing and running the tools. Follow them very carefully. Once you're able to compile a simple "hello world" application as they detail, then you're able to compile these C files. There is no make file; just compile each straight from the command line. For example: gcc nweb23f.c -o nweb23f
 
-
+# Speed
+The webserver is pretty slow. It takes several seconds to generate each image. The AM335x CPU is pretty heavily loaded by the spectrum analyzer application. I would guess this might be why Siglent elected to not provide a web interface in the SSA3021X.  The Plus model no doubt has a faster CPU.
 
 
 
